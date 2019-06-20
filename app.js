@@ -70,6 +70,8 @@ function game(userChoice) {
     console.log("user choice " + userChoice + " computer choice " + computerChoice);
 }
 
+
+// First functions to be called
 function main() {
 rock_div.addEventListener('click', () => game("rock"));
 paper_div.addEventListener('click', () => game("paper"));
