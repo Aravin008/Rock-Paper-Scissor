@@ -15,27 +15,38 @@ function getComputerChoice() {
 }
 
 function wins(userChoice, computerChoice) {
-    userScore++;
     const smallUserWord = "user".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
+    userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${userChoice}${smallUserWord} beats ${computerChoice}${smallCompWord}. You win!.`;
+    // Lets animate the border of element clicked with greeen
+    userChoice_div.classList.add('green-glow');
+    setTimeout(function() {userChoice_div.classList.remove('green-glow')}, 300);
 }
 
 function loses(userChoice, computerChoice) {
-    computerScore++;
     const smallUserWord = "user".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
+    computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${userChoice}${smallUserWord} loses to ${computerChoice}${smallCompWord}. You lost!.`;
+    // animate
+    userChoice_div.classList.add('red-glow');
+    setTimeout(function() {userChoice_div.classList.remove('red-glow')}, 300);
 }
 
 function draws(userChoice, computerChoice) {
     const smallUserWord = "user".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
     result_p.innerHTML = `${userChoice}${smallUserWord} equals ${computerChoice}${smallCompWord}. Its a draw!.`;
+    userChoice_div.classList.add('gray-glow');
+    setTimeout(function() {userChoice_div.classList.remove('gray-glow')}, 300);
 }
 
 function game(userChoice) {
